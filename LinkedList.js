@@ -57,6 +57,27 @@ class LinkedList {
     currentNode.next = new _Node(item, oldNext);
   }
 
+  insertAt(item, position) {
+    if (position < 0) {
+      console.log('out of bounds!');
+      return;
+    }
+    if (this.head === null) {
+      this.insertFirst(item);
+    }
+    let currentNode = this.head;
+    let prevNode = this.head;
+    for (let i = 1; i < position; i++) {
+      if (currentNode === null) {
+        console.log('index is out of bounds!');
+      }
+      prevNode = currentNode;
+      currentNode = currentNode.next;
+    }
+    let oldNext = currentNode.next;
+    currentNode.next = new _Node(item, oldNext);
+  }
+
   insertLast(value) {
     if (this.head === null) {
       this.insertFirst(value);
