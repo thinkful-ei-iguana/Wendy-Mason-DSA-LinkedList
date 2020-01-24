@@ -31,18 +31,18 @@ class LinkedList {
     this.head = new _Node(value, this.head);
   }
 
-  // insertLast(value) {
-  //   if (this.head === null) {
-  //     this.insertFirst(value);
-  //   } else {
-  //     let currNode = this.head;
-  //     while (currNode !== null) {
-  //       currNode = currNode.next;
-  //     }
-  //     //set the last node's next
-  //     currNode.next = new _Node(value, null);
-  //   }
-  // }
+  insertLast(value) {
+    if (this.head === null) {
+      this.insertFirst(value);
+    } else {
+      let currNode = this.head;
+      while (currNode.next !== null) {
+        currNode = currNode.next;
+      }
+      //set the last node's next
+      currNode.next = new _Node(value, null);
+    }
+  }
 
   // remove(item) {
   //   if (!this.head) {

@@ -7,11 +7,11 @@ function main() {
   const SLL = new LinkedList();
 
   SLL.insertFirst("Apollo");
-  // SLL.insertLast("Boomer");
-  // SLL.insertLast("Helo");
-  // SLL.insertLast("Husker");
-  // SLL.insertLast("Starbuck");
-  console.log(SLL);
+  SLL.insertLast("Boomer");
+  SLL.insertLast("Helo");
+  SLL.insertLast("Husker");
+  SLL.insertLast("Starbuck");
+  console.log(JSON.stringify(SLL));
 }
 
 main();
