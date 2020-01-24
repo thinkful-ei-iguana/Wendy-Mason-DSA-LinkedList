@@ -27,7 +27,7 @@ class LinkedList {
 
   insertFirst(value) {
     //point to the head since it is either null or the first element
-    console.log("im insert first");
+
     this.head = new _Node(value, this.head);
   }
 
@@ -42,6 +42,19 @@ class LinkedList {
       currentNode = currentNode.next;
     }
     prevNode.next = new _Node(item, currentNode);
+  }
+
+  insertAFter(item, afterItem) {
+    if (this.head === null) {
+      this.insertFirst(item);
+    }
+    let currentNode = this.head;
+
+    while (currentNode !== null && currentNode.value !== afterItem) {
+      currentNode = currentNode.next;
+    }
+    let oldNext = currentNode.next;
+    currentNode.next = new _Node(item, oldNext);
   }
 
   insertLast(value) {
@@ -70,7 +83,7 @@ class LinkedList {
     let currNode = this.head;
     let previousNode = this.head;
 
-    while ((currNode !== null) && (currNode.value !== item)) {
+    while (currNode !== null && currNode.value !== item) {
       previousNode = currNode;
       currNode = currNode.next;
     }
