@@ -44,30 +44,31 @@ class LinkedList {
     }
   }
 
-  // remove(item) {
-  //   if (!this.head) {
-  //     return null;
-  //   }
-  //   //if it is the first one
-  //   if (this.head.value === item) {
-  //     return this.head;
-  //   }
-  //   //all others
-  //   let currNode = this.head.next;
-  //   let previousNode = this.head;
+  remove(item) {
+    if (!this.head) {
+      return null;
+    }
+    //if it is the first one
+    if (this.head.value === item) {
+      this.head = this.head.next;
+      return;
+    }
+    //all others
+    let currNode = this.head;
+    let previousNode = this.head;
 
-  //   while (currNode.value !== item && currNode !== null) {
-  //     previousNode = currNode;
-  //     currNode = currNode.next;
-  //   }
-  //   if (currNode === null) {
-  //     console.log("Item not found");
-  //     return;
-  //   } else {
-  //     previousNode.next = currNode.next;
-  //     //how come we don't delete it from memory? will it be garbage collection
-  //   }
-  // }
+    while ((currNode !== null) && (currNode.value !== item)) {
+      previousNode = currNode;
+      currNode = currNode.next;
+    }
+    if (currNode === null) {
+      console.log("Item not found");
+      return;
+    } else {
+      previousNode.next = currNode.next;
+      //how come we don't delete it from memory? will it be garbage collection
+    }
+  }
 }
 
 module.exports = LinkedList;
