@@ -1,6 +1,8 @@
-export default class _Node {
+class _Node {
   constructor(value, next) {
-    this.next = null;
     this.value = null;
+    this.next = null;
   }
 }
+
+module.exports = _Node;
