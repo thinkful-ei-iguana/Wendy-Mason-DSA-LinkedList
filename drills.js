@@ -13,6 +13,7 @@ function main() {
   SLL.insertLast("Starbuck");
   SLL.insertLast('Tauhida');
   SLL.remove('squirrel');
+  SLL.insertBefore('BOOM', 'Helo');
   console.log(JSON.stringify(SLL));
 }
 
